@@ -11,9 +11,9 @@ func main() {
 	fmt.Println("Hello World.")
 
 	dbConfig := db.CreateDBConfig(
-		"test",
-		"test_user",
-		"test_password",
+		"prism_development",
+		"prism",
+		"prism",
 		"localhost",
 		"5432",
 	)

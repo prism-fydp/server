@@ -20,12 +20,15 @@ func createDatabaseURL(dbConfig *DBConfig) string {
 }
 
 func CreateDBClient(dbConfig *DBConfig) *pgx.Conn {
+	// Connect to the database
 	conn, err := pgx.Connect(context.Background(), createDatabaseURL(dbConfig))
 	if err != nil {
 		// TODO: setup logging
 		fmt.Println("Error: could not connect to database.")
 		os.Exit(1)
 	}
+
+	// TODO: run migrations before returning the connection
 
 	return conn
 }
